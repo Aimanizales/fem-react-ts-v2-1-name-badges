@@ -1,6 +1,8 @@
-import PropTypes from 'prop-types';
-
-type ControlPanelProps = { name: string; onChange: any };
+// type ControlPanelProps = {
+interface ControlPanelProps { // type and interface is basically the same (check extends)
+  name: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+};
 
 const ControlPanel = ({ name, onChange }: ControlPanelProps) => {
   return (
@@ -20,11 +22,6 @@ const ControlPanel = ({ name, onChange }: ControlPanelProps) => {
       </div>
     </form>
   );
-};
-
-ControlPanel.propTypes = {
-  name: PropTypes.string,
-  onChange: PropTypes.func,
 };
 
 export default ControlPanel;
